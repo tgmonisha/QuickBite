@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Adding User Details</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #fdfdfd; /* changed from purple to light neutral */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .top-link {
+            margin-bottom: 20px;
+            align-self: flex-start;
+        }
+
+        .top-link a {
+            color: #ff6f3c;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
+        .top-link a:hover {
+            color: #e65c29;
+        }
+
+        form {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px 40px;
+            max-width: 420px;
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 15px;
+        }
+
+        td {
+            vertical-align: middle;
+        }
+
+        label {
+            font-weight: 600;
+            color: #ff6f3c;
+            padding-right: 15px;
+            min-width: 100px;
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 1rem;
+            border: 2px solid #ff6f3c;
+            border-radius: 6px;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #ff3a00;
+            outline: none;
+            box-shadow: 0 0 8px #ff6f3c66;
+        }
+
+        button {
+            background: #ff6f3c;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #e65c29;
+        }
+
+        @media (max-width: 480px) {
+            form {
+                padding: 20px;
+            }
+
+            label {
+                min-width: 90px;
+                font-size: 0.9rem;
+            }
+
+            button {
+                font-size: 1rem;
+            }
+
+            .top-link {
+                align-self: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-link">
+    <a href="Addrestaurant.html" class="add-btn"> Add Restaurants</a>
+</div>
+
+<style>
+    .add-btn {
+        display: inline-block;
+        background-color: rgb(0, 0, 255);  /* Green */
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: background-color 0.3s, transform 0.2s;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .add-btn:hover {
+        background-color: rgb(0, 0, 255);  /* Darker green */
+        transform: scale(1.05);
+    }
+
+    .top-link {
+        text-align: right;
+        margin-bottom: 15px;
+        margin-right: 20px;
+    }
+</style>
+    
+
+    <form action="callinguser" method="POST">
+        <table>
+            <tr><td><label>Name:</label></td><td><input type="text" name="name" required></td></tr>
+            <tr><td><label>UserName:</label></td><td><input type="text" name="username" required></td></tr>
+            <tr><td><label>Password:</label></td><td><input type="password" name="password" required></td></tr>
+            <tr><td><label>Email:</label></td><td><input type="email" name="email" required></td></tr>
+            <tr><td><label>Phone Number:</label></td><td><input type="text" name="phonenumber" required></td></tr>
+            <tr><td><label>Address:</label></td><td><textarea name="address"></textarea></td></tr>
+            <tr>
+                <td><label>Role:</label></td>
+                <td>
+                    <select name="role" required>
+                        <option value="Customer">Customer</option>
+                        <option value="RestaurantOwner">Restaurant Owner</option>
+                        <option value="Admin">Admin</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td colspan="2"><button type="submit">Register</button></td></tr>
+        </table>
+    </form>
+
+</body>
+</html>
